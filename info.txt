@@ -1,0 +1,118 @@
+Create the Migration File:
+npx sequelize-cli migration:generate --name create-<table_name>
+
+Create Database: npx sequelize-cli db:migrate
+
+Run Script file for Super-Admin user Creation: node scripts/createDefaultSuperAdmin.js
+
+Database Name: fazenda_backend
+
+Register:
+{
+  "full_name": "sltadmin1",
+  "address": "123 Main St",
+  "email": "sltadmin1@gmail.com",
+  "password": "sltadmin1pwd",
+  "phone_number": "1234567891",
+  "user_role": "slt-admin",
+  "company": "SLT Comp 01",
+  "profile_picture": null
+}
+{
+  "full_name": "customeradmin1",
+  "address": "123 Main St",
+  "email": "customeradmin1@gmail.com",
+  "password": "customeradmin1pwd",
+  "phone_number": "2234567891",
+  "user_role": "customer-admin",
+  "company": "Custom Comp 01",
+  "profile_picture": null
+}
+{
+  "full_name": "customerman1",
+  "address": "123 Main St",
+  "email": "customerman1@gmail.com",
+  "password": "customerman1pwd",
+  "phone_number": "3234567891",
+  "user_role": "customer-manager",
+  "company": "Manager Comp 01"
+}
+
+Login:
+( Run: node scripts/createDefaultSuperAdmin.js )
+{
+  "email": "batman@example.com",
+  "password": "DarkKnight"
+}
+{
+  "email": "sltadmin1@gmail.com",
+  "password": "sltadmin1pwd"
+}
+{
+  "email": "customeradmin1@gmail.com",
+  "password": "customeradmin1pwd"
+}
+{
+  "email": "customerman1@gmail.com",
+  "password": "customerman1pwd"
+}
+
+LOGGEDINUSER: /api/user/me
+( HTTP Headers - Authorization: Bearer <token>; Content-Type: application/json )
+
+INVENTORY:
+( HTTP Headers - Authorization: Bearer <token>; Content-Type: application/json )
+{
+  
+}
+
+DEVICES:
+( HTTP Headers - Authorization: Bearer <token>; Content-Type: application/json )
+{
+
+}
+
+PACKAGES: /api/packages/1
+( HTTP Headers - Authorization: Bearer <token>; Content-Type: application/json )
+{
+  "packageId": "P001",
+  "packageName": "Package01",
+  "connectivityType": ["WiFi"],
+  "monthlyRental": 100.00,
+  "features": ["Data", "Support"],
+  "poleOrPortable": "Pole",
+  "landingPageVisibility": true,
+  "parameters": ["Soil Nitrogen", "Rainfall"]
+}
+
+FARMS: /api/farm/1
+( HTTP Headers - Authorization: Bearer <token>; Content-Type: application/json )
+{
+  "farmId": "F008",
+  "farmName": "Farm 08",
+  "farmAddress": "888 Country Lane",
+  "farmContactNo": "1234567898",
+  "farmEmail": "F008@gmail.com",
+  "farmDevices": [5, 6],
+  "farmManagers": [3, 5]
+}
+
+MESSAGES: /api/messages/
+( HTTP Headers - Authorization: Bearer <token>; Content-Type: application/json )
+{
+  "receiverId": 4,
+  "content": "slt-1 To customer-1 Messaging"
+}
+
+
+
+GITHUB ACTIONS:
+
+git checkout master/ main
+git pull origin main
+git checkout Adheesha
+git merge master/ main
+< Make changes to the code >
+git add .
+git commit -m "Your descriptive commit message"
+git push origin Adheesha
